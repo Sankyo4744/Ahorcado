@@ -1,0 +1,105 @@
+body {
+    
+    background-image: url('./milena-murara-galaxia3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: white solid 10px;
+    height: 100vh;
+} 
+
+
+
+.degradado {
+    background: linear-gradient(to right, #ff2222, #7B198B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.titulo {
+    display: inline-block;
+    margin: 100px;
+    font-size: 40px;
+}
+
+.comenzar_1{
+    display: inline-block;
+    color:black;
+    box-sizing: border-box;
+    font-size: 30px;
+    border: black solid 5px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 8px;
+    background: linear-gradient(to right, #7B198B, #ffffff, #820808);
+    margin: 20px;
+    width: 200px;
+}
+
+.comenzar_1:hover {
+    font-size: 40px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 8px;
+    background: linear-gradient(to right, #7B198B,#ffffff,#820808);
+    width: 25px;
+    width: 250px;
+    box-sizing: border-box;
+    transition: 2s;
+}
+
+.opciones_1 {
+    display: inline-block;
+    color:black;
+    box-sizing: border-box;
+    font-size: 30px;
+    border: black solid 5px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 8px;
+    background: linear-gradient(to right, #7B198B, #ffffff, #820808);
+    margin: 20px;
+    width: 200px;
+    transition: 2s;
+}
+
+.opciones_1:hover {
+    font-size: 40px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 8px;
+    background: linear-gradient(to right, #7B198B,#ffffff,#820808);
+    width: 25px;
+    width: 250px;
+    box-sizing: border-box;
+}
+
+.contenedor-1{
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    grid-template-rows: 600px 1fr 300px;
+    gap: 20px;
+    height: 100vh;
+}
+
+.barra_de_opciones {
+    background-color: aqua;
+    box-sizing: border-box;
+    margin: 30px;
+}
+
+.dibujo {
+    background-color: yellow;
+    margin: 30px;
+}
+
+.palabra_guion {
+    background-color: #ffffff;
+    grid-column: 1/span 2;
+}
