@@ -14,8 +14,6 @@ body {
     height: 100vh;
 } 
 
-
-
 .degradado {
     background: linear-gradient(to right, #ff2222, #7B198B);
     -webkit-background-clip: text;
@@ -28,7 +26,7 @@ body {
     font-size: 40px;
 }
 
-.comenzar_1{
+.comenzar_1 {
     display: inline-block;
     color:black;
     box-sizing: border-box;
@@ -46,12 +44,14 @@ body {
     font-size: 40px;
     border-radius: 20px;
     text-align: center;
+    color:#ffffff;
     padding: 8px;
-    background: linear-gradient(to right, #7B198B,#ffffff,#820808);
+    background: black;
     width: 25px;
     width: 250px;
     box-sizing: border-box;
-    transition: 2s;
+    transition: 1.3s;
+    border: white solid 2px;
 }
 
 .opciones_1 {
@@ -80,7 +80,7 @@ body {
     box-sizing: border-box;
 }
 
-.contenedor-1{
+.contenedor-1 {
     display: grid;
     grid-template-columns: 600px 1fr;
     grid-template-rows: 600px 1fr 300px;
