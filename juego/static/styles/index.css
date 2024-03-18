@@ -1,8 +1,8 @@
 body {
-    
-    background-image: url('./milena-murara-galaxia3.jpg');
+    background-image: url('/static/images/milena-murara-galaxia3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    box-sizing: content-box;
 }
 
 .contenedor {
@@ -10,8 +10,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: white solid 10px;
-    height: 100vh;
+    height: 100%;
 } 
 
 .degradado {
@@ -78,28 +77,4 @@ body {
     width: 25px;
     width: 250px;
     box-sizing: border-box;
-}
-
-.contenedor-1 {
-    display: grid;
-    grid-template-columns: 600px 1fr;
-    grid-template-rows: 600px 1fr 300px;
-    gap: 20px;
-    height: 100vh;
-}
-
-.barra_de_opciones {
-    background-color: aqua;
-    box-sizing: border-box;
-    margin: 30px;
-}
-
-.dibujo {
-    background-color: yellow;
-    margin: 30px;
-}
-
-.palabra_guion {
-    background-color: #ffffff;
-    grid-column: 1/span 2;
 }

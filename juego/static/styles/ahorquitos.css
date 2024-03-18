@@ -1,0 +1,32 @@
+body {
+    background-image: url('/static/images/milena-murara-galaxia3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+section {
+    display: grid;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    
+}
+
+.muñeco{
+    display: inline-block;
+    background-color: aquamarine;
+    width: 80%;
+    height: 500px;
+}
+
+.menu_opciones {
+    display: inline-block;
+    background-color: red;
+    flex-grow: 1;
+    height: 500px;
+}

@@ -1,0 +1,19 @@
+.lineas {
+    display: flex;
+    height: 30%;
+    width: 100%;
+    text-align: center;
+    margin: 50px;
+    color: white;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.lineas > div {
+    flex: 1 1 auto;
+    min-width: 200px;
+    height: 100px;
+    margin: 10px; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
+}

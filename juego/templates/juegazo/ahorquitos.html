@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="{% static 'styles/ahorquitos.css' %}">
+    <link rel = "stylesheet" href="{% static 'styles/lineas.css' %}">
+    <title>Ahorcado</title>
+</head>
+<body class = "fondo_juego">
+    <section>    
+        <div class = "muñeco">muñeco</div>
+        <div class = "menu_opciones">menu de opciones</div>
+    </section>
+    
+    <div class = "lineas">{% include 'components/lineas.html' %}</div>
+
+</body>
+</html>
