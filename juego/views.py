@@ -6,4 +6,6 @@ def index(request):
     return render(request, 'menu/index.html')
 
 def juego(request):
-    return render(request, 'juegazo/ahorquitos.html')
+    palabra = {"palabra":"ramon", "categoria":"nombres", "frase":"personaje del chavo"}
+    return render(request, 'juegazo/ahorquitos.html', {'palabra': palabra})
+

@@ -1,25 +1,7 @@
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
-<div>__________</div>
+{% for letra in palabra.palabra %}
+    {% if letra == ' ' %}
+        <div>          </div>
+    {% else %}
+        <div>__________</div>
+    {% endif %}
+{% endfor %}
