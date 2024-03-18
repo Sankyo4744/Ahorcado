@@ -1,0 +1,66 @@
+.menu_opciones {
+    display: flex;
+    flex-grow: 1;
+    height: 500px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+.pista {
+    color: black;
+    margin: 20px auto;
+    text-align: center;
+    border: #777 5px;
+    background-color: #D9D9D9;
+    height: 50px;
+    width: 100%;
+    padding-top: 12px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; /* Para el estilo "Light" */
+    font-style: italic;
+    font-size: 32px;
+}
+
+.adivinar {
+    color: black;
+    margin: 20px auto;
+    text-align: center;
+    border: #777 5px;
+    background-color: #D9D9D9;
+    height: 50px;
+    width: 100%;
+    padding-top: 12px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; /* Para el estilo "Light" */
+    font-style: italic;
+    font-size: 32px;
+}
+
+.menu {
+    color: black;
+    margin: 20px auto;
+    text-align: center;
+    border: #777 5px;
+    background-color: #D9D9D9;
+    height: 50px;
+    width: 100%;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; /* Para el estilo "Light" */
+    font-style: italic;
+    font-size: 32px;
+}
+
+.corazon {
+    margin: 20px auto;
+    font-size: 35px;
+}
+
+.fa-heart {
+    color: white;
+    font-size: 35px;
+}

@@ -1,0 +1,94 @@
+.muñeco{
+    display: grid;
+    grid-template-columns: repeat(7, 70px);
+    grid-template-rows: repeat(6, 75px);
+    width: 80%;
+    height: 500px;
+    justify-content: center;
+    align-content: center;
+    grid-auto-flow: row;
+}
+
+.grid-item:nth-child(1),
+.grid-item:nth-child(8),
+.grid-item:nth-child(15),
+.grid-item:nth-child(22),
+.grid-item:nth-child(29),
+.grid-item:nth-child(36) {
+    box-sizing: border-box;
+    border-right: white solid 6px;
+}
+
+.grid-item:nth-child(42),
+.grid-item:nth-child(41),
+.grid-item:nth-child(40),
+.grid-item:nth-child(39),
+.grid-item:nth-child(38),
+.grid-item:nth-child(37),
+.grid-item:nth-child(36) {
+    box-sizing: border-box;
+    border-bottom: white solid 6px;
+}
+
+.grid-item:nth-child(2),
+.grid-item:nth-child(3),
+.grid-item:nth-child(4),
+.grid-item:nth-child(5),
+.grid-item:nth-child(6) {
+    box-sizing: border-box;
+    border-top: white solid 6px;
+}
+
+.grid-item:nth-child(5) {
+    border-right: white solid 2px;
+    box-sizing: border-box;
+}
+.grid-item:nth-child(6) {
+    border-left: white solid 2px;
+    box-sizing: border-box;
+}
+
+.grid-item:nth-child(12) {
+    background-image: url('/static/images/cabeza izquierda.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: content-box;
+    background-position: right center;
+}
+
+.grid-item:nth-child(13) {
+    background-image: url('/static/images/cabeza derecha.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: content-box;
+}
+
+
+.grid-item:nth-child(19),
+.grid-item:nth-child(26) {
+    box-sizing: border-box;
+    border-right: white solid 4px;
+}
+
+.grid-item:nth-child(20),
+.grid-item:nth-child(27) {
+    box-sizing: border-box;
+    border-left: white solid 4px;
+}
+
+
+.grid-item:nth-child(19),
+.grid-item:nth-child(33) {
+    background-image: url('/static/images/brazo y pierna derecha.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: content-box;
+}
+
+.grid-item:nth-child(20),
+.grid-item:nth-child(34) {
+    background-image: url('/static/images/brazo y pierna izquierda.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: content-box;
+}

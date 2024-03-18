@@ -10,23 +10,18 @@ body {
 }
 
 section {
-    display: grid;
+    display: flex;
     height: 70%;
     width: 100%;
-    display: flex;
-    
+    display: flex;    
 }
 
-.muñeco{
+.enlace-sin-estilos {
+    color: inherit; /* Hereda el color del texto de su elemento padre */
+    text-decoration: none; /* Elimina la decoración del texto */
+    /* Otros estilos que deseas restablecer */
+    margin: 20px auto;
     display: inline-block;
-    background-color: aquamarine;
-    width: 80%;
-    height: 500px;
-}
-
-.menu_opciones {
-    display: inline-block;
-    background-color: red;
-    flex-grow: 1;
-    height: 500px;
+    width: 100%;
+    text-align: center;
 }

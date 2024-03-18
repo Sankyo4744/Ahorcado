@@ -3,5 +3,5 @@ from juego.views import juego
 
 
 urlpatterns = [
-    path('juego/', juego)
+    path('juego/', juego, name='juego')
 ]
