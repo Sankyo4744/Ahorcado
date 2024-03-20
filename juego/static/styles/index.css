@@ -17,6 +17,9 @@ body {
     background: linear-gradient(to right, #ff2222, #7B198B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .titulo {

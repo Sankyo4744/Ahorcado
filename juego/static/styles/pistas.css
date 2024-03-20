@@ -1,0 +1,62 @@
+.pistas {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: 650px;
+    height: 450px;
+    background-color: #222222;
+    border-radius: 30px;
+    margin-top: 180px;
+    opacity: .9;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.enable_pistas {
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    width: 650px;
+    height: 450px;
+    background-color: #222222;
+    border-radius: 30px;
+    margin-top: 180px;
+    opacity: .9;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.pistas-1, .pistas-2, .pistas-3 {
+    border-radius: 30px;
+    background-color: #601374;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; /* Para el estilo "Light" */
+    font-style: italic;
+    font-size: 32px;
+    width: 75%;
+    height: 45px;
+    text-align: center;
+    margin: 30px 10px;
+}
+
+.pistas-0 {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; /* Para el estilo "Light" */
+    font-style: italic;
+    font-size: 32px;
+    margin-top: 40px;
+    font-size: 40px;
+}
+
+.close {
+    color: white;
+    font-size: 45px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px 15px;
+}

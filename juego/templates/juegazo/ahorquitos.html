@@ -9,8 +9,10 @@
     <link rel = "stylesheet" href="{% static 'styles/lineas.css' %}">
     <link rel = "stylesheet" href="{% static 'styles/muñeco.css' %}">
     <link rel = "stylesheet" href="{% static 'styles/botones.css' %}">
+    <link rel = "stylesheet" href="{% static 'styles/pistas.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
 
     <title>Ahorcado</title>
 </head>
@@ -21,6 +23,9 @@
     </section>
     
     <div class = "lineas">{% include 'components/lineas.html' %}</div>
+    <div id = "pistas" class = "pistas">{% include 'components/pistas.html' %}</div>
+
+    <script src="{% static 'js/pistas.js' %}"></script>
 
 </body>
 </html>
