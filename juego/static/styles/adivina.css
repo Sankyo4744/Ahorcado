@@ -1,4 +1,4 @@
-.pistas {
+.adivina {
     display: none;
     position: absolute;
     z-index: 100;
@@ -13,7 +13,7 @@
     align-items: center;
 }
 
-.enable_pistas {
+.enable_adivina {
     display: flex;
     position: absolute;
     z-index: 100;
@@ -28,22 +28,7 @@
     align-items: center;
 }
 
-.pistas-1, .pistas-2, .pistas-3 {
-    border-radius: 30px;
-    background-color: #601374;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300; /* Para el estilo "Light" */
-    font-style: italic;
-    font-size: 32px;
-    width: 75%;
-    height: 45px;
-    text-align: center;
-    margin: 30px 10px;
-    box-sizing: border-box;
-}
-
-.pistas-0 {
+.adivina-0 {
     color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: 300; /* Para el estilo "Light" */
@@ -53,11 +38,31 @@
     font-size: 40px;
 }
 
-.close {
+.close-adivina {
     color: white;
     font-size: 45px;
     position: absolute;
     top: 0;
     right: 0;
     margin: 8px 15px;
+}
+
+.input-adivina {
+    display: flex;
+    width: 70%;
+    height: 80px;
+    color: black;
+    text-align: center;
+    font-size: 70px;
+    box-sizing: border-box;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.input-adivina-0 {
+    font-size: 30px;
+    text-align: center;
+    border-radius: 20px;
 }

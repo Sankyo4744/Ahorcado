@@ -10,3 +10,5 @@ function pistasInvisible() {
 }
 btnPistas.addEventListener("click", pistasVisible);
 btnClose.addEventListener("click", pistasInvisible);
+
+//abrir ventana de pistas

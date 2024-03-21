@@ -10,6 +10,7 @@
     <link rel = "stylesheet" href="{% static 'styles/muñeco.css' %}">
     <link rel = "stylesheet" href="{% static 'styles/botones.css' %}">
     <link rel = "stylesheet" href="{% static 'styles/pistas.css' %}">
+    <link rel = "stylesheet" href="{% static 'styles/adivina.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
@@ -24,8 +25,13 @@
     
     <div class = "lineas">{% include 'components/lineas.html' %}</div>
     <div id = "pistas" class = "pistas">{% include 'components/pistas.html' %}</div>
+    <div id = "adivina" class = "adivina">{% include 'components/adivina.html' %}</div>
+
+    {% include 'components/formularioTeclas.html' %}
 
     <script src="{% static 'js/pistas.js' %}"></script>
+    <script src="{% static 'js/adivina.js' %}"></script>
+    <script src="{% static 'js/teclas.js' %}"></script>
 
 </body>
 </html>
