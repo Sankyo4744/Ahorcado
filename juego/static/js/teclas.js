@@ -5,5 +5,6 @@ document.addEventListener("keydown", function(event) {
     console.log("La tecla sleccionada es: " + teclas)
 });
 
+let lifes
 
 
