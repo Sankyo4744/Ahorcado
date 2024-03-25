@@ -1,7 +1,9 @@
-{% for letra in palabra.palabra %}
+{% for letra in palabra.palabra|lower %}
     {% if letra == ' ' %}
         <div>          </div>
+    {% elif letra in lista_caracter %}
+        <div style="border-bottom: white solid 4px;">{{ letra }}</div>
     {% else %}
-        <div>__________</div>
+        <div id="{{ letra }}">_________</div>
     {% endif %}
 {% endfor %}

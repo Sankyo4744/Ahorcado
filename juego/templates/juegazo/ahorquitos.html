@@ -29,10 +29,11 @@
 
     {% include 'components/formularioTeclas.html' %}
 
+    <input id = "input-palabra" type="hidden" value="{{ palabra.palabra }}">
+
     <script src="{% static 'js/pistas.js' %}"></script>
     <script src="{% static 'js/adivina.js' %}"></script>
     <script src="{% static 'js/teclas.js' %}"></script>
-    <script src="{% static 'js/muñeco.js' %}"></script>
 
 </body>
 </html>

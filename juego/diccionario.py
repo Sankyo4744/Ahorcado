@@ -498,3 +498,4 @@ diccionario_palabras = [
     {"palabra": "Camarón", "categoria": "crustáceo", "frase": "Un crustáceo marino o de agua dulce con un cuerpo alargado y patas adaptadas para nadar, conocido por su carne tierna y su popularidad como marisco."},
     {"palabra": "Pulpo", "categoria": "molusco", "frase": "Un molusco marino con ocho tentáculos y una habilidad excepcional para cambiar de color y camuflarse en su entorno, conocido por su inteligencia y su sabor delicado en la cocina."}
 ]
+
