@@ -1,5 +1,9 @@
 <div class = "pistas-0">PISTAS</div>
 <button id = "close" class = "close"><i class = "fa fa-times"></i></button>
-<div class = "pistas-1"> {{ palabra.categoria }} </div>
-<div class = "pistas-2"> {{ caracter }} </div>
-<div class = "pistas-3"> {{ palabra.frase }}</div>
+<button onclick="mostrar_pistas(this)" id = "pista-categoria" class = "pistas-1"> CATEGORIA </button>
+<button onclick="mostrar_pistas(this)" id = "pista-caracter" class = "pistas-2"> LETRA </button>
+<button onclick="mostrar_pistas(this)" id = "pista-frase" class = "pistas-3"> FRASE </button>
+
+<input type="hidden" name="pista-categoria" value="{{ palabra.categoria }}">
+<input type="hidden" name="pista-caracter" value="{{ caracter }}">
+<input type="hidden" name="pista-frase" value="{{ palabra.frase }}">

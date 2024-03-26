@@ -13,8 +13,13 @@ def index(request):
     cont_vidas.save()
     return render(request, 'menu/index.html')
 
+contador = 0
+correctas = ""
 
 def juego(request):
+
+    global contador
+    global correctas
 
     if request.method == "GET":
         lista_caracter = ["'", '-', ',', '.', ';', '_', '¿', '?', '!', '¡', '#', '@', '$', '%' ]
@@ -38,15 +43,26 @@ def juego(request):
 
         presionarTeclas = request.POST.get("presionarTeclas")
         palabra = request.POST.get("palabra")
+        palabra_sin_espacios = palabra.replace(" ", "").lower()
         
-        
-        if presionarTeclas not in palabra:
+        if presionarTeclas not in palabra_sin_espacios:
             cont_vidas = Personaje.objects.get(id = 1)
             cont_vidas.vidas = cont_vidas.vidas - 1
             cont_vidas.save()
             print(cont_vidas.vidas)
 
-            
+        elif presionarTeclas in palabra_sin_espacios:
+            if presionarTeclas not in correctas:
+                contador += palabra_sin_espacios.count(presionarTeclas)
+                print(f"palabra sin espacios es: {palabra_sin_espacios}")
+                correctas += presionarTeclas
+        print(contador)
+        if contador == len(palabra_sin_espacios):
+            contador = 0
+            correctas = ""
+            return render(request, 'juegazo/victoria.html')
+
         return HttpResponse(status=204)
+
 
 
