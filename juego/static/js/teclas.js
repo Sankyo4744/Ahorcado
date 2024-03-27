@@ -74,7 +74,7 @@ function vidas(){
     const corazon_5 = document.getElementById("corazon-5");
     const corazon_6 = document.getElementById("corazon-6");
     const corazon_7 = document.getElementById("corazon-7");
-    const game_over = document.getElementById("game-over");
+    /* const game_over = document.getElementById("game-over"); */
 
 
     if (lifes === 6) {
@@ -101,7 +101,7 @@ function vidas(){
     }else if (lifes === 0){
         pierna_izquierda.style.backgroundImage= "url('/static/images/brazo y pierna derecha.png')";
         corazon_1.style.color = "transparent"
-        game_over.style.display = "flex"
+        /* game_over.style.display = "flex" */
     }
 
 }

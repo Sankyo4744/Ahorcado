@@ -1,5 +1,5 @@
 .game-over {
-    display: none;
+    display: flex;
     position: absolute;
     z-index: 100;
     width: 650px;

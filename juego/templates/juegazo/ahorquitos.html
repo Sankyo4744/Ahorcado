@@ -28,12 +28,13 @@
     <div class = "lineas">{% include 'components/lineas.html' %}</div>
     <div id = "pistas" class = "pistas">{% include 'components/pistas.html' %}</div>
     <div id = "adivina" class = "adivina">{% include 'components/adivina.html' %}</div>
-    <div id = "game-over" class = "game-over">{% include 'components/game-over.html' %}</div>
     {% block victoria %}{% endblock %}
 
     {% include 'components/formularioTeclas.html' %}
 
+    {% block input %}
     <input id = "input-palabra" type="hidden" value="{{ palabra.palabra }}">
+    {% endblock %}
 
     <script src="{% static 'js/pistas.js' %}"></script>
     <script src="{% static 'js/adivina.js' %}"></script>

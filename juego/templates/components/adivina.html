@@ -1,4 +1,10 @@
 <div class = "adivina-0">ADIVINA</div>
 <button id = "close-adivina" class = "close-adivina"><i class = "fa fa-times"></i></button>
 <button class = "boton-adivinar-palabra"></button>
-<div class = "input-adivina"><input class = "input-adivina-0" type="text" placeholder="ADIVINA LA PALABRA"></div>
+
+<form class = "form-adivina" action="{% url 'proyecto' %}" method="POST">
+    {% csrf_token %}
+    <input class = "input-adivina-0" type="text" placeholder="ADIVINA LA PALABRA" name = "escrito-adivina">
+    <button id = "btn-adivina" class = "enlace-sin-estilos" type="submit">ADIVINAR</button>
+    <input type="hidden" name="frase-adivinar" value="{{ palabra.palabra }}">
+</form>
