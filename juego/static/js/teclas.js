@@ -7,6 +7,7 @@ const pista_caracter = document.getElementById("pista-caracter");
 const pista_frase = document.getElementById("pista-frase");
 
 function mostrar_pistas(self) {
+    /* querySelector es para seleccionar varios elementos en html y selecciona los inputs que tienen el nombre igual al id que el boton que fue espichado */
     const input = document.querySelector('input[name="' + self.id + '"]');
     console.log(self);
     if (self === pista_categoria){
@@ -33,6 +34,7 @@ function mostrar_pistas(self) {
 
 document.addEventListener("keydown", function(event) {
     const adivina = document.getElementById("adivina");
+
     const visible = window.getComputedStyle(adivina).getPropertyValue("display") !== "none";
     if (!visible) {
         let teclas = event.key.toLowerCase();
@@ -47,7 +49,7 @@ document.addEventListener("keydown", function(event) {
                 linea.style.padding = "10px";
             } );            
         }
-
+        /* submit le dice al formulario que se envie a la url asignada */
         document.getElementById("formTeclas").submit();
         console.log("La tecla seleccionada es: " + teclas);
         console.log("La cantidad de vidas que tiene es: " + lifes);

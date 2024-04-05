@@ -1,3 +1,4 @@
+<!-- action va a enviar la informacion del formulario a la url con nombre proyecto -->
 <form id = "formTeclas" action="{% url 'proyecto' %}" method="POST">
     {% csrf_token %}
     <input id = "teclas" type="hidden" name="presionarTeclas" value="">

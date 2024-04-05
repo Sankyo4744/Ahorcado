@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from .models import Personaje
 from unidecode import unidecode
 
-
+#vista para el menu, se declaran las variables para acceder al dato mediante el id en la base de datos y se restablece el valor de vidas a 7
 def index(request):
     #Personaje.objects.create(vidas = 7)
     cont_vidas = Personaje.objects.get(id = 1)
@@ -13,6 +13,7 @@ def index(request):
     cont_vidas.save()
     return render(request, 'menu/index.html')
 
+#se declaran las varibles para guardar la infformacion de los caracteres correctos y la cantidad de letras correctas
 contador = 0
 correctas = ""
 
@@ -20,7 +21,7 @@ def juego(request):
 
     global contador
     global correctas
-
+    #se crea el condicional para verificar si el metodo de la peticion es get
     if request.method == "GET":
         lista_caracter = ["'", '-', ',', '.', ';', '_', '¿', '?', '!', '¡', '#', '@', '$', '%' ]
         cont_vidas = Personaje.objects.get(id = 1)
@@ -28,6 +29,7 @@ def juego(request):
         cont_vidas.save()
         palabra_aleatoria = random.choice(diccionario_palabras)
         palabra_sin_tilde = unidecode(palabra_aleatoria["palabra"])
+        #al diccionario de palabra_aleatoria se le asigna al valor de palabra_sin_tilde a la clave palabra
         palabra_aleatoria["palabra"] = palabra_sin_tilde
         palabra = palabra_aleatoria["palabra"]
         palabra_sin_espacios = palabra.replace(" ", "")
@@ -37,7 +39,9 @@ def juego(request):
         print(palabra_sin_espacios)
         vidas = Personaje.objects.get(id = 1).vidas
         return render(request, 'juegazo/ahorquitos.html', {"palabra":palabra_aleatoria, "caracter": aleatorio, 'vidas': vidas, 'lista_caracter':lista_caracter})
+    #verifica si el metodo de la peticion es POST cada vez que oprime una tecla
     elif request.method == "POST":
+        #condicional para verificar si la clave palabra que esta siendo enviada del formulario (formTeclas) esta en la peticion POST
         if "palabra" in request.POST:
             print(request.POST.get("palabra"))
             print(request.POST.get("presionarTeclas"))
@@ -53,9 +57,12 @@ def juego(request):
                 print(cont_vidas.vidas)
 
             elif presionarTeclas in palabra_sin_espacios:
+                # es el condicional para sabe si la tecla ya se encuentra en la varible correctas o toca añadirla
                 if presionarTeclas not in correctas:
-                    contador += palabra_sin_espacios.count(presionarTeclas)
+                    #count va a contar cuantas veces estan las teclas correctas
+                    contador += palabra_sin_espacios.count(presionarTeclas) 
                     print(f"palabra sin espacios es: {palabra_sin_espacios}")
+                    #correctas esta añadiendo las letras correctas en un string
                     correctas += presionarTeclas
             print(contador)
             if contador == len(palabra_sin_espacios):
@@ -66,6 +73,7 @@ def juego(request):
             cont_vidas = Personaje.objects.get(id = 1)
             if cont_vidas.vidas == 0:
                 return redirect('derrota')
+        #logica para adivinar
         elif "escrito-adivina" in request.POST:
             frase_adivinar = request.POST.get("frase-adivinar")
             frase_adivinar = frase_adivinar.lower()
@@ -75,7 +83,6 @@ def juego(request):
                 return redirect('ganar')
             else:
                 return redirect('derrota')
-            #logica para adivinar
 
         return HttpResponse(status=204)
     
