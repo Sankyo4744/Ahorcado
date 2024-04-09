@@ -13,14 +13,16 @@ def index(request):
     cont_vidas.save()
     return render(request, 'menu/index.html')
 
-#se declaran las varibles para guardar la infformacion de los caracteres correctos y la cantidad de letras correctas
+#se declaran las varibles para guardar la informacion de los caracteres correctos y la cantidad de letras correctas
 contador = 0
 correctas = ""
+incorrectas = ""
 
 def juego(request):
 
     global contador
     global correctas
+    global incorrectas
     #se crea el condicional para verificar si el metodo de la peticion es get
     if request.method == "GET":
         lista_caracter = ["'", '-', ',', '.', ';', '_', '¿', '?', '!', '¡', '#', '@', '$', '%' ]
@@ -29,6 +31,8 @@ def juego(request):
         cont_vidas.save()
         palabra_aleatoria = random.choice(diccionario_palabras)
         palabra_sin_tilde = unidecode(palabra_aleatoria["palabra"])
+        for caracter in lista_caracter:
+            palabra_sin_tilde = palabra_sin_tilde.replace(caracter, "")
         #al diccionario de palabra_aleatoria se le asigna al valor de palabra_sin_tilde a la clave palabra
         palabra_aleatoria["palabra"] = palabra_sin_tilde
         palabra = palabra_aleatoria["palabra"]
@@ -52,9 +56,11 @@ def juego(request):
             palabra_sin_espacios = palabra.replace(" ", "").lower()
             
             if presionarTeclas not in palabra_sin_espacios:
-                cont_vidas.vidas = cont_vidas.vidas - 1
-                cont_vidas.save()
-                print(cont_vidas.vidas)
+                if presionarTeclas not in incorrectas:
+                    incorrectas += presionarTeclas
+                    cont_vidas.vidas = cont_vidas.vidas - 1
+                    cont_vidas.save()
+                    print(cont_vidas.vidas)
 
             elif presionarTeclas in palabra_sin_espacios:
                 # es el condicional para sabe si la tecla ya se encuentra en la varible correctas o toca añadirla
@@ -68,6 +74,7 @@ def juego(request):
             if contador == len(palabra_sin_espacios):
                 contador = 0
                 correctas = ""
+                incorrectas = ""
                 return redirect('ganar')
             print(f"las vidas actuales son: {cont_vidas.vidas} y el tipo de de dato es {type(cont_vidas.vidas)}")
             cont_vidas = Personaje.objects.get(id = 1)

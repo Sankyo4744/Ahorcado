@@ -1,4 +1,5 @@
 let lifes = 7;
+let incorrectas = "";
 
 const input_palabra = document.getElementById("input-palabra").value;
 const palabra_lower = input_palabra.toLowerCase();
@@ -13,50 +14,53 @@ function mostrar_pistas(self) {
     if (self === pista_categoria){
         pista_categoria.textContent= input.value;
         pista_categoria.disabled = true;
-        lifes = lifes - 1;
         pista_categoria.style.backgroundColor = "#000080"
     }else if (self === pista_caracter){
         pista_caracter.textContent= input.value;
         pista_caracter.disabled = true;
-        lifes = lifes -1;
         pista_caracter.style.backgroundColor = "#000080"
     }else if (self === pista_frase){
         pista_frase.textContent= input.value;
         pista_frase.disabled = true;
-        lifes = lifes - 1;
         pista_frase.style.backgroundColor = "#000080";
         pista_frase.style.fontSize = "1em";
         pista_frase.style.height = "100px";
     }
-    vidas();
 }       
 
 
 document.addEventListener("keydown", function(event) {
-    const adivina = document.getElementById("adivina");
-
-    const visible = window.getComputedStyle(adivina).getPropertyValue("display") !== "none";
-    if (!visible) {
-        let teclas = event.key.toLowerCase();
-        document.getElementById("teclas").value=teclas;
-        if (!palabra_lower.includes(teclas.toLowerCase())){ 
-            lifes = lifes - 1;
-        }else {
-            let linea = document.querySelectorAll("#" + teclas);
-            linea.forEach(linea => {
-                linea.textContent=teclas;
-                linea.style.borderBottom = "white solid 4px";
-                linea.style.padding = "10px";
-            } );            
+    /* se obtiene el valor ASCII de la letra para que evite numeros, signos especiales y teclas especiales */
+    if(event.keyCode >= 65 && event.keyCode <= 90){
+        const adivina = document.getElementById("adivina");
+        const visible = window.getComputedStyle(adivina).getPropertyValue("display") !== "none";
+        if (!visible) {
+            let teclas = event.key.toLowerCase();
+            document.getElementById("teclas").value=teclas;
+            if (!palabra_lower.includes(teclas.toLowerCase())){ 
+                if (!incorrectas.includes(teclas.toLowerCase())){
+                    lifes = lifes - 1;
+                    incorrectas += teclas.toLowerCase();
+                }
+            }else {
+                let linea = document.querySelectorAll("#" + teclas);
+                linea.forEach(linea => {
+                    linea.textContent=teclas;
+                    linea.style.borderBottom = "white solid 4px";
+                    linea.style.padding = "10px";
+                } );            
+            }
+            /* submit le dice al formulario que se envie a la url asignada */
+            document.getElementById("formTeclas").submit();
+            console.log("La tecla seleccionada es: " + teclas);
+            console.log("La cantidad de vidas que tiene es: " + lifes);
+            console.log(palabra_lower);
+            console.log(incorrectas + "este es el valor de incorrectas");
         }
-        /* submit le dice al formulario que se envie a la url asignada */
-        document.getElementById("formTeclas").submit();
-        console.log("La tecla seleccionada es: " + teclas);
-        console.log("La cantidad de vidas que tiene es: " + lifes);
-        console.log(palabra_lower);
-    }
 
-    vidas();
+        vidas();
+    }
+    
 });
 
 function vidas(){
